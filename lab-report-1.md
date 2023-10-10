@@ -44,6 +44,15 @@ Hello.class  Hello.java  messages  README
   ```
 * This behavior occurs regardless of the directory you are in. In the following example, we switch to the 'lecture1' directory and retry the 'ls' command with a relative path to the 'README' file:
 ```
-
+[user@sahara ~]$ cd lecture1
+[user@sahara ~/lecture1]$ ls README
+README
 ```
-
+## cat command
+The 'cat' command, short for "Concatenate", which is used to print out the contents of one or more files. 
+#### No Arugments 
+* Working in the '/home/ directory and using the command with no arguments results in
+```
+[user@sahara ~]$ cat
+^C
+```
