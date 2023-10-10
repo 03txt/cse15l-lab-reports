@@ -51,8 +51,33 @@ README
 ## cat command
 The 'cat' command, short for "Concatenate", which is used to print out the contents of one or more files. 
 #### No Arugments 
-* Working in the '/home/ directory and using the command with no arguments results in
+* Working in the '/home/ directory and using the command with no arguments results in error and looks as follows: 
 ```
 [user@sahara ~]$ cat
 ^C
 ```
+* Although not stated explicitly, there is an error at runtime as the command does not output anything nor does it display an error message.
+#### Using a Path to a Directory 
+* Using the command with a path to a directory results in a message stating that the relative provided references a directory. In our example, we begin in the '/home' directory, use the command followed by a relative path to the directory 'lecture1'. Terminal prints the following:
+```
+[user@sahara ~]$ cat lecture1
+cat: lecture1: Is a directory
+```
+#### Using a Path to a File
+* Working in the '/home' directory and using a relative path to a file will return the contents of the referenced file, for example:
+```
+[user@sahara ~]$ cat lecture1/README
+To use this program:
+
+javac Hello.java
+java Hello messages/en-us.txt
+```
+* This command also works for multiple files as well. For example, when switching to the messages directory and using a relative paths to mutiple file, it will print out the contents of the files:
+```
+[user@sahara ~]$ cd lecture1/messages
+[user@sahara ~/lecture1/messages]$ cat en-us.txt zh-cn.tx
+t
+Hello World!
+你好世界
+ ```
+
