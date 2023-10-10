@@ -30,3 +30,8 @@ lecture1
 ```
 * This can be intepretted as the '/home' directory only containing one directory named 'lecture1'.
 ####  Using a Path to a Directory 
+* Working in the '/home', using the 'ls' command with a relative path to a directory will also print out a list of files and other directories in the directory referenced. For example, if we provide a relative path to lecture1, it will print out the following:
+```
+[user@sahara ~]$ ls lecture1
+Hello.class  Hello.java  messages  README
+```
