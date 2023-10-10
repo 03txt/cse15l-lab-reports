@@ -72,13 +72,15 @@ To use this program:
 javac Hello.java
 java Hello messages/en-us.txt
 ```
-* This command also works for multiple files as well. For example, when switching to the messages directory and using a relative paths to mutiple files, it will print out the contents of the files:
+* This command also works for multiple files as well. For example, when switching to the messages directory and using a relative paths to mutiple files, it will print
+* out the contents of the files:
+
 ```
 [user@sahara ~]$ cd lecture1/messages
 [user@sahara ~/lecture1/messages]$ cat en-us.txt zh-cn.tx
 t
 Hello World!
 你好世界
- ```
+```
 * *The content for both files are combined into one input as seen above.*
 
