@@ -24,53 +24,29 @@ The 'ls' command, short for "List", is a command used to print out the list of f
 * This can be intepretted as the '/home' directory only containing one directory named 'lecture1'.
 #### Using a Path to a Directory 
 * Working in the '/home', using the 'ls' command with a relative path to a directory will also print out a list of files and other directories in the directory referenced. For example, if we provide a relative path to lecture1, it will print out the following:
-  ![image]()
+  ![image](lsusingpath.png)
 * *Again, it is important to note that this does not cause error because 'lecture1' is directly within the '/home' directory.*  
 #### Using a Path to a File 
 * Working in the '/home' directory and using a relative path to a file will return the relative path provided as an argument as shown below:
-  ```
-  [user@sahara ~]$ ls lecture1/messages/zh-cn.txt
-  lecture1/messages/zh-cn.txt
-  ```
-* This behavior occurs regardless of the directory you are in. In the following example, we switch to the 'lecture1' directory and retry the 'ls' command with a relative path to the 'README' file:
-```
-[user@sahara ~]$ cd lecture1
-[user@sahara ~/lecture1]$ ls README
-README
-```
+![image](lsfile.png)
+* This behavior occurs regardless of the directory you are in. In the following example, we switch to the 'lecture1' directory and retry the 'ls' command with 'lecture1' as our working directory and a relative path to the 'README' file:
+![image](lsfile2.png)
 ## cat command
 The 'cat' command, short for "Concatenate", which is used to print out the contents of one or more files. 
 #### No Arugments 
-* Working in the '/home/ directory and using the command with no arguments results in error and looks as follows: 
-```
-[user@sahara ~]$ cat
-^C
-```
+* Working in the '/home/' directory and using the command with no arguments results in error and looks as follows: 
+![image](catnoarg.png)
 * Although not stated explicitly, there is an error at runtime as the command does not output anything nor does it display an error message.
 #### Using a Path to a Directory 
 * Using the command with a path to a directory results in a message stating that the relative provided references a directory. In our example, we begin in the '/home' directory, use the command followed by a relative path to the directory 'lecture1'. Terminal prints the following:
-```
-[user@sahara ~]$ cat lecture1
-cat: lecture1: Is a directory
-```
+![image](catdirectory.png)
+* This command returns an error message as the user did not use a legal input for the command. A directory was provided as opposed to a path to a file. 
 #### Using a Path to a File
-* Working in the '/home' directory and using a relative path to a file will return the contents of the referenced file, for example:
-```
-[user@sahara ~]$ cat lecture1/README
-To use this program:
+* Working in the '/home' directory and using a relative path to a the 'README' file in the 'lecture1' directory will return the contents of the referenced file, for example:
+![image](catpathfile.png)
 
-javac Hello.java
-java Hello messages/en-us.txt
-```
-
-* This command also works for multiple files as well. For example, when switching to the messages directory and using a relative paths to mutiple files, it will printout the contents of the files:
-```
-[user@sahara ~]$ cd lecture1/messages
-[user@sahara ~/lecture1/messages]$ cat en-us.txt zh-cn.tx
-t
-Hello World!
-你好世界
-```
+* This command also works for multiple files as well. For example, when switching/working in the 'messages' directory and using a relative paths to the 'en-us.txt' and 'zh-cn.txt' files, it will printout the contents of both files:
+![image](catpathfiles.png)
 
 * *The content for both files are combined into one input as seen above.*
 
