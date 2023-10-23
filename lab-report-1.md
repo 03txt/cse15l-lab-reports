@@ -2,11 +2,13 @@
 ## cd command
 The 'cd' command, short for "Change Directory", is a command used to switch between directories and change the current working directory.
 #### No Arugments  
+* When working in any other directory besides the '/home' directory, using this command with argument results in a return to your home (/home) directory, as seen below:
+![image](cdnocommand2.png)
+* Here, we change our working directory to the 'lecture1' directory and when cd without an argument is used, the user is returned to the '/home' directory.
 * Working in the '/home' directory, using the 'cd' command with no arguments does not produce an output or change in the current working directory, as shown below:
-```
-[user@sahara ~]$ cd
-```
-* The resulting line, rather the lack thereof, is due to a lack of specification of the directory the user wants to use as their new working directory. Since no argument/directory name is provided, the working directory remains the same.  
+![image](cdnocommand.jpg)
+* The resulting line, rather the lack thereof, is due to a lack of specification of the directory the user wants to use as their new working directory. Since no argument/directory name is provided, the working directory ('/home') remains the same.
+* This is not necessarily an error as seen in our first exmaple. Since we are already working in the '/home' directory, it does not change our working directory. 
 #### Using a Path to a Directory 
 * Using the command with a path to a directory causes a change in the user's working directory. In our example, we begin in the '/home' directory, use the command 'cd' followed by a relative path to the directory 'lecture1'. The working directory is then changed to 'lecture1', and is shown as follows:
 ```
