@@ -20,5 +20,9 @@ public void testReverseInPlaceOdd()
   assertArrayEquals(new int[]{}, input1};
 }
 ```
+### Symptoms: 
+![image](fail1.png)
+![image](fail2.png)
 
-
+## Code with bug: 
+```
