@@ -48,6 +48,7 @@ static void reversedInPlace(int[] arr)
 
 }
 ```
+### Explanation: In the previous code, the coder failed to account for the value they replaced when assigning the current index to the value of the end of the list. Once replaced, there was no way to get the value that once was at index 'i'. To remedy this, I added a temporary variable to store the value of the current index 'i'. Furthermore, when reversing an array, it can be interpretted as the indices on "opposite" ends switching values, so I also added that step where the index that has its value placed into 'i' also receives the value of 'i' through the temporary value. Lastly, to prevent overwriting values that were already replaced, I split the list in half! 
 ## Part Two: Researching Commands
 ## 'grep'
 
@@ -59,7 +60,7 @@ static void reversedInPlace(int[] arr)
 
 - ' -c ' (line count) Working in the same directory, using ```grep -c 'color' biomed/*.txt``` yields: 
 
-![image](
+![image](greplinecount.png)
 - Here, instead of printing out all the files that contain the pattern provided the command returns the number of lines that the pattern occurred in each file! 
 
 
