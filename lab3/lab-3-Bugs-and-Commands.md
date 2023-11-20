@@ -160,7 +160,7 @@ biomed/1471-2180-3-10.txt:          S. coelicolor and
 biomed/1471-2180-3-10.txt:        S. coelicolor ,
 ```
 
-- Here, the command searches for the word or partial word "color" regardless of the case; it is case insensitive! That is why there are words such as Colorado and Color present.
+- Here, the command searches for the word or partial word (pattern) "color" regardless of the case; it is case insensitive! That is why there are words such as Colorado and Color present.
 
 - Along the same lines, you may input words in all capitals such as "COLOR" which should yield the same result. Using ```grep -i 'COLOR' biomed/*.txt```, also yields:
 
@@ -206,6 +206,64 @@ biomed/1471-213X-1-4.txt:        fluorescent protein (EYFP or ECFP), two color v
 biomed/1471-213X-1-4.txt:        http://www.clontech.com/gfp/pdf/LivingColors.pdf.
 ```
 
+- It is important to note that this command searches through files for the pattern "color" which could be the word "color" by itself or part of a larger word such as "coloring" as seen in file ```biomed/1471-2105-3-2.txt```.
+
+- ```-w``` (whole). This command/addition to grep specifies to the terminal that the user would like to find "color" as a entire word and not as a pattern within a file. For example, Working in the ```techinical``` directory, using ```grep -w 'color' biomed/*.txt```:
+
+```
+$ grep -w 'color' biomed/*.txt        
+biomed/1471-2105-2-9.txt:          Figure 3. The groups from FastGroup are color coded on
+biomed/1471-2105-3-17.txt:            
+What is noticeable through the color scheme (Table
+biomed/1471-2105-3-2.txt:            color-coded confidence ratings with each proposed base
+biomed/1471-2105-3-2.txt:            chi-square-based algorithm [ 71 ] , and thus the color
+biomed/1471-2105-3-2.txt:            unique color code in the illustrations on the "RNA
+biomed/1471-2105-3-2.txt:            there are two numbers. The orange color refers to the
+biomed/1471-2105-3-2.txt:            the pink color refers to the number of mutual changes
+biomed/1471-2105-3-2.txt:            Location;" H-3F.3). In this table, color is used to
+biomed/1471-2105-3-2.txt:            color when the organism names are the same. The colors
+biomed/1471-2105-4-25.txt:          (TSS). A set of small color squares represent the
+biomed/1471-2105-4-26.txt:        same principles should be readily applicable to two color
+biomed/1471-2121-2-1.txt:          color reaction or enhanced chemiluminescence,
+biomed/1471-2121-3-16.txt:          ADE3 color marker. Cells that have      
+biomed/1471-2121-3-16.txt:          of the red color. To assay sectoring, colonies were
+biomed/1471-2121-3-25.txt:        coat color mutation
+biomed/1471-2121-4-3.txt:          captured using a RT220 color digital camera (Diagnostic
+biomed/1471-213X-1-11.txt:          Dual color immunohistochemistry experiments
+biomed/1471-213X-1-11.txt:          interact themselves. Hence, we employed dual color
+biomed/1471-213X-1-11.txt:          Grenoble, France). The captured color images were
+biomed/1471-213X-1-11.txt:          Dual-color immunohistochemistry [ 35] experiments were
+biomed/1471-213X-1-11.txt:          Microphotography was performed using color negative
+biomed/1471-213X-1-13.txt:          not hydrolyzed. Following color development, the embryos
+```
+
+- It is important to note that this command is case sensitive, so searching phrases/words with different cases will result in different results.
+
+- For example, using the same example of "color," capitalizing the word ```grep -w 'Color' biomed/*.txt``` yields:
+
+```
+$ grep -w 'Color' biomed/*.txt        
+biomed/1471-2105-3-2.txt:            Results/Page, and Color Display are also displayed on
+biomed/1471-2105-3-2.txt:            • Color Display: to help distinguish the organism
+biomed/1471-2121-2-21.txt:          Aves Labs, Tigard, OR). Color development was achieved by
+biomed/1471-213X-1-11.txt:          Dual-Color (Peroxidase/Fluorescence)    
+biomed/1471-2369-3-1.txt:          biotinylated donkey anti-goat IgG. Color was developed
+biomed/1471-2407-2-11.txt:          2 /methanol for 4 minutes. Color on     
+biomed/1472-6793-2-8.txt:          2 50 mM, pH 9.5). Color development      
+biomed/1472-6904-1-2.txt:            Hair Color
+biomed/1472-6904-1-2.txt:            Hair Color/Dose Relationship
+biomed/1472-6904-1-2.txt:            Hair Color
+biomed/1472-6904-1-2.txt:            Hair Color Relationship
+biomed/1472-6904-1-2.txt:            Hair Color
+biomed/1472-6904-1-2.txt:            Hair Color/Dose Relationship
+biomed/1472-6904-1-2.txt:        Hair Color, Dose, Dose Duration, HPLC and FPIA
+biomed/1472-6904-1-2.txt:        Hair Color, Dose, Dose Duration, HPLC and FPIA
+biomed/1472-6904-1-2.txt:        Hair Color, Dose, Dose Duration, HPLC and FPIA
+biomed/1475-925X-2-10.txt:        Color fundus photographs have been routinely employed
+biomed/cc1882.txt:        ultrasonograph device (Color Doppler, model SSD-830; Aloka
+```
+
+
 - ``` -c ``` (line count) Working in the ```techinical``` directory, using ```grep -c 'color' biomed/*.txt``` yields:
 ```
 $ grep -c 'color' biomed/*.txt
@@ -250,6 +308,10 @@ biomed/1471-2105-3-2.txt:11
 
 - Here, instead of printing out all the files that contain the pattern provided, the command returns the number of lines that the pattern occurred in each file! So, whether or not the file contained the string pattern passed in, the file appears in the output!
 
-- If you are not interested in all the files, the command can also be used to check a specific file and 
+- If you are not interested in all the files, the command can also be used to check a specific file and return an integer, specifying the amount of lines in which the pattern occurs within the specified files. For example, working in the ```techinical``` directory, using ```grep -c 'color' biomed/1471-2105-3-2.txt``` yields:
+```
+$ grep -c 'color' biomed/1471-2105-3-2.txt
+11
+```
 
 
