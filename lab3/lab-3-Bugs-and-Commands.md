@@ -361,5 +361,99 @@ $ grep -c 'color' biomed/1471-2105-3-2.txt
 11
 ```
 
+Sources Cites: 
+CHATGPT: 
+Prompt provided - "what can you do with the grep -c command"
 
+Output: 
+
+The grep -c command is used to count the number of lines that match a given pattern within a file or multiple files.
+
+Example 1: Counting Lines Matching a Pattern in a Single File
+```
+grep -c "error" error_log.txt
+
+```
+Output:
+```
+8
+```
+
+Explanation: The command searches for the pattern "error" in the file 'error_log.txt' and returns the count of lines containing that pattern, which in this case is 8.
+
+Example 2: Counting Lines Matching a Pattern Across Multiple Files
+```
+grep -c "success" *.log
+
+```
+
+Output:
+
+```
+access.log: 15
+system.log: 7
+app.log: 22
+```
+
+Explanation: Here, grep -c "success" *.log counts the occurrences of the pattern "success" in all files with a '.log' extension in the current directory. It displays each file's name along with the count of matching lines in that file.
+
+Use Cases:
+Statistics Gathering: Useful for obtaining quantitative insights into occurrences of specific patterns within files or directories.
+Batch Processing: When needing to quickly identify the number of instances of a particular term or expression across multiple files.
+Error Log Analysis: Efficiently counting the occurrences of errors or specific keywords in log files to assess system behavior.
+The -c option in grep is handy for a quick numeric summary of matches without displaying the actual matching lines, providing a simple count of occurrences that meet the specified pattern criteria.
+
+Changes: I used this prompt to further guide me on a way to use the -c command which led me to test the command on one file as opposed to a list of them. 
+
+
+Prompt provided - "what other grep commands are there" 
+
+Output: 
+Apart from the commonly used grep commands and options we've discussed earlier, there are several other useful commands and options available with grep that provide flexibility and control over text searches. Here are a few additional ones:
+
+Additional grep Commands/Options:
+1. grep -v (Invert Match)
+The -v option inverts the match, displaying lines that do not contain the specified pattern.
+
+Example:
+```
+grep -v "error" log.txt
+
+```
+
+This command will display all lines in 'log.txt' that do not contain the word "error".
+
+2. grep -l (Display Filename)
+The -l option is used to print only the names of files containing the specified pattern, instead of the matching lines.
+
+Example:
+```
+grep -l "success" *.log
+
+```
+
+This command will list the names of files ending in '.log' that contain the word "success".
+
+3. grep -n (Display Line Numbers)
+The -n option displays the line number along with the matching line for each occurrence of the pattern.
+
+Example:
+```
+grep -n "warning" file.txt
+
+```
+This command will display all lines containing "warning" in 'file.txt' along with their line numbers.
+
+4. grep -E (Extended Regular Expressions)
+The -E flag allows the use of extended regular expressions (ERE) in pattern matching.
+
+Example:
+```
+grep -E "word1|word2" file.txt
+```
+This command will search for lines containing either "word1" or "word2" in 'file.txt' using extended regular expressions.
+
+These additional commands and options provide enhanced functionality and customization for searching and manipulating text using grep in various scenarios.
+
+Changes: I used this prompt to further guide me in my search for extensions to the grep command. I decided to use the "-l" command and experiment with it in the docsearch files. 
 
