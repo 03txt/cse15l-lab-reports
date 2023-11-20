@@ -237,7 +237,7 @@ biomed/1471-213X-1-11.txt:          Microphotography was performed using color n
 biomed/1471-213X-1-13.txt:          not hydrolyzed. Following color development, the embryos
 ```
 
-- It is important to note that this command is case sensitive, so searching phrases/words with different cases will result in different results.
+- It is important to note that this command is case sensitive, so searching phrases/words with different cases will result in different results. This command will return the lines in which the word occurred and the location of which the occurance appeared. 
 
 - For example, using the same example of "color," capitalizing the word ```grep -w 'Color' biomed/*.txt``` yields:
 
@@ -262,6 +262,53 @@ biomed/1472-6904-1-2.txt:        Hair Color, Dose, Dose Duration, HPLC and FPIA
 biomed/1475-925X-2-10.txt:        Color fundus photographs have been routinely employed
 biomed/cc1882.txt:        ultrasonograph device (Color Doppler, model SSD-830; Aloka
 ```
+- For any of the commands above, if you are not particularly interested in the line containing a given pattern, the ```l``` command may be used to simply display the file name. For exmaple, using ```grep -l 'Color' biomed/*.txt``` yields: 
+
+```
+$ grep -l 'Color' biomed/*.txt
+biomed/1471-2105-3-2.txt
+biomed/1471-2121-1-2.txt
+biomed/1471-2121-2-21.txt
+biomed/1471-213X-1-11.txt
+biomed/1471-213X-1-4.txt
+biomed/1471-2172-3-4.txt
+biomed/1471-2199-3-11.txt
+biomed/1471-2202-2-6.txt
+biomed/1471-2288-3-9.txt
+biomed/1471-2318-3-2.txt
+biomed/1471-2369-3-1.txt
+biomed/1471-2407-2-11.txt
+biomed/1471-2407-2-22.txt
+biomed/1472-6785-2-7.txt
+biomed/1472-6793-2-8.txt
+biomed/1472-6807-2-1.txt
+biomed/1472-684X-2-1.txt
+biomed/1472-6904-1-2.txt
+biomed/1472-6920-1-3.txt
+biomed/1472-6963-3-12.txt
+biomed/1475-925X-2-10.txt
+biomed/1476-072X-2-3.txt
+biomed/1476-072X-2-4.txt
+biomed/1476-4598-2-24.txt
+biomed/bcr605.txt
+biomed/cc1882.txt
+biomed/rr196.txt
+```
+- Furthermore, this command be used in combination with the commands above. For example, using ```grep -w -l 'Color' biomed/*.txt``` will search for files within the ```biomed``` directory containing the word 'Color' and return the list of files containing the word, as such:
+
+```
+$ grep -w -l 'Color' biomed/*.txt     
+biomed/1471-2105-3-2.txt
+biomed/1471-2121-2-21.txt
+biomed/1471-213X-1-11.txt
+biomed/1471-2369-3-1.txt
+biomed/1471-2407-2-11.txt
+biomed/1472-6793-2-8.txt
+biomed/1472-6904-1-2.txt
+biomed/1475-925X-2-10.txt
+biomed/cc1882.txt
+```
+
 
 
 - ``` -c ``` (line count) Working in the ```techinical``` directory, using ```grep -c 'color' biomed/*.txt``` yields:
@@ -313,5 +360,6 @@ biomed/1471-2105-3-2.txt:11
 $ grep -c 'color' biomed/1471-2105-3-2.txt
 11
 ```
+
 
 
