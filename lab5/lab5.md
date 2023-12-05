@@ -4,18 +4,17 @@
 ## method returning wrong number ? 
 #### Dania Santiago [student]
 <span style="font-size:larger;">♡ </span> Hello! I have been having issues with one of my method (totalCost()). It is supposed to return the total cost of all the items in my basket, however, it is only returning the price of the last item I added to the basket.  
-![image]()
+![image](test)
+![image](testfail)
 In the screenshot that I provided, I expected the total cost would be 2200. However, the return is simply only 600 please help. I don’t know what what wrong. I also included the implementation of my basket for reference!
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  hello
+![image](implementation)
 
 # 1 Answer 
 #### Diana Santiago [staff]
 Hi dania! I think you should look into the initialization of your varibles! ( hint: consider checking inside the for loop).
-
-
-
-
-
+#### Dania Santiago [student]
+thank you so much! i realized that i was resetting my price every time i iterated through the loop! 
+![image](testsuccess)
 
 
 ### part 2 - 
